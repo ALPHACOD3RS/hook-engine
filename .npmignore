@@ -1,0 +1,8 @@
+db/
+logs/
+mock/
+examples/
+tests/
+*.lock
+tsconfig.json
+vitest.config.ts

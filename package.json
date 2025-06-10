@@ -1,0 +1,55 @@
+{
+  "name": "hook-engine",
+  "version": "0.1.0",
+  "description": "Production-grade webhook engine with retry, idempotency, local dev tools, and logging.",
+  "author": "Naol Ketema",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "keywords": [
+    "webhooks",
+    "stripe",
+    "serverless",
+    "retry",
+    "idempotency",
+    "replay",
+    "cli",
+    "event-handling",
+    "developer-tools"
+  ],
+  "scripts": {
+    "dev": "ts-node examples/express.ts",
+    "logs": "ts-node cli/index.ts logs",
+    "replay": "ts-node cli/index.ts replay",
+    "build": "tsc"
+  },
+  "bin": {
+    "webhook-gateway": "./dist/cli/index.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "crypto": "^1.0.1",
+    "express": "^5.1.0"
+  },
+  "files": [
+  "dist",
+  "README.md"
+],
+
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.15.30",
+    "commander": "^14.0.0",
+    "dotenv": "^16.5.0",
+    "node-fetch": "^3.3.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}
