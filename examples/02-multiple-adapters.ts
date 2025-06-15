@@ -18,7 +18,7 @@ app.use('/webhooks', express.raw({ type: 'application/json' }));
 const webhookConfigs = {
     stripe: {
         source: 'stripe',
-        secret: "whsec_c1fb216668c23cdf6079aa2ae4fce39ad7b269e0ebeb114879c248c7954e321c"
+        secret: process.env.STRIPE_WEBHOOK_SECRET || 'whsec_test_secret'
     },
     github: {
         source: 'github',
