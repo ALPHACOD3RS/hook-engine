@@ -1,55 +1,84 @@
 {
   "name": "hook-engine",
-  "version": "0.1.0",
-  "description": "Production-grade webhook engine with retry, idempotency, local dev tools, and logging.",
+  "version": "0.2.1",
+  "description": "Production-grade webhook engine with comprehensive adapter support, security, reliability, structured logging, and CLI tools.",
   "author": "Naol Ketema",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "import": "./dist/src/index.js",
+      "require": "./dist/src/index.js"
     }
   },
   "keywords": [
     "webhooks",
     "stripe",
+    "github",
+    "discord",
+    "shopify",
+    "paypal",
+    "twilio",
+    "sendgrid",
     "serverless",
     "retry",
     "idempotency",
     "replay",
     "cli",
     "event-handling",
-    "developer-tools"
+    "developer-tools",
+    "structured-logging",
+    "security",
+    "reliability",
+    "multi-tenant",
+    "observability"
   ],
-  "scripts": {
-    "dev": "ts-node examples/express.ts",
-    "logs": "ts-node cli/index.ts logs",
-    "replay": "ts-node cli/index.ts replay",
-    "build": "tsc"
-  },
+      "scripts": {
+        "build": "tsc",
+        "test": "jest",
+        "dev": "ts-node src/index.ts",
+        "lint": "eslint src/**/*.ts",
+        "format": "prettier --write src/**/*.ts",
+        "prepublishOnly": "npm run build",
+        "example:basic": "ts-node examples/01-basic-webhook.ts",
+        "example:multi": "ts-node examples/02-multiple-adapters.ts",
+        "example:logging": "ts-node examples/03-structured-logging.ts",
+        "example:cli": "ts-node examples/04-cli-tools.ts",
+        "example:ecommerce": "ts-node examples/05-ecommerce-platform.ts",
+        "examples:all": "echo 'Run examples on different ports:' && echo '  npm run example:basic (port 3000)' && echo '  npm run example:multi (port 3001)' && echo '  npm run example:logging (port 3002)' && echo '  npm run example:ecommerce (port 3003)' && echo '  npm run example:cli (CLI demo)'"
+    },
   "bin": {
-    "webhook-gateway": "./dist/cli/index.js"
+    "hook-engine": "./bin/hook-engine"
   },
   "dependencies": {
     "better-sqlite3": "^11.10.0",
-    "crypto": "^1.0.1",
-    "express": "^5.1.0"
+    "commander": "^14.0.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2",
+    "uuid": "^11.1.0"
   },
   "files": [
-  "dist",
-  "README.md"
-],
-
+    "dist",
+    "bin",
+    "README.md",
+    "examples"
+  ],
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/express": "^5.0.3",
     "@types/node": "^22.15.30",
-    "commander": "^14.0.0",
-    "dotenv": "^16.5.0",
-    "node-fetch": "^3.3.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.0"
+    "typescript": "^5.4.0",
+    "vitest": "^3.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alphacod3rs/hook-engine.git"
+  },
+  "homepage": "https://github.com/alphacod3rs/hook-engine#readme",
+  "bugs": {
+    "url": "https://github.com/alphacod3rs/hook-engine/issues"
   }
 }
