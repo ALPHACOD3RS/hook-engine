@@ -1,34 +1,34 @@
-# 🔌 Hook-Engine
+#  Hook-Engine
 
 **Enterprise-grade webhook processing engine** for Node.js applications with production-ready features:
 
-- ✅ **7 Webhook Adapters** - Stripe, GitHub, Discord, Shopify, PayPal, Twilio, SendGrid
-- ✅ **Signature Verification** - Cryptographic validation for all providers
-- ✅ **Structured Logging** - JSON logs with multiple outputs and rotation
-- ✅ **Security & Reliability** - Rate limiting, circuit breakers, health monitoring
-- ✅ **CLI Tools** - Development, testing, and monitoring utilities
-- ✅ **Multi-tenant Support** - Handle multiple customers/environments
-- ✅ **Performance Monitoring** - Real-time metrics and observability
-- ✅ **Error Recovery** - Retry logic with exponential backoff
+-  **7 Webhook Adapters** - Stripe, GitHub, Discord, Shopify, PayPal, Twilio, SendGrid
+-  **Signature Verification** - Cryptographic validation for all providers
+-  **Structured Logging** - JSON logs with multiple outputs and rotation
+-  **Security & Reliability** - Rate limiting, circuit breakers, health monitoring
+-  **CLI Tools** - Development, testing, and monitoring utilities
+-  **Multi-tenant Support** - Handle multiple customers/environments
+-  **Performance Monitoring** - Real-time metrics and observability
+-  **Error Recovery** - Retry logic with exponential backoff
 
 ---
 
-## 🚀 Why Hook-Engine?
+##  Why Hook-Engine?
 
 Most webhook implementations suffer from:
 
-- 💥 **Poor Error Handling** - Silent failures in production
-- 🔒 **Security Gaps** - Missing signature verification
-- 📊 **No Observability** - Lack of monitoring and logging
-- 🔁 **No Retry Logic** - Lost events due to temporary failures
-- 🧪 **Hard to Test** - No development tools or replay capabilities
-- 🏗️ **Not Scalable** - Can't handle multiple providers or high volume
+-  **Poor Error Handling** - Silent failures in production
+-  **Security Gaps** - Missing signature verification
+-  **No Observability** - Lack of monitoring and logging
+-  **No Retry Logic** - Lost events due to temporary failures
+-  **Hard to Test** - No development tools or replay capabilities
+-  **Not Scalable** - Can't handle multiple providers or high volume
 
 **Hook-Engine solves all these problems** with a production-ready, enterprise-grade solution.
 
 ---
 
-## 📦 Installation
+##  Installation
 
 ```bash
 npm install hook-engine
@@ -45,7 +45,7 @@ npm install -g hook-engine
 
 ---
 
-## 🎯 Quick Start
+##  Quick Start
 
 ### Basic Webhook Processing
 
@@ -65,43 +65,43 @@ app.post('/webhooks/stripe', async (req, res) => {
             secret: process.env.STRIPE_WEBHOOK_SECRET
         });
         
-        console.log(`✅ Received ${event.type}:`, event.id);
+        console.log(` Received ${event.type}:`, event.id);
         
         // Your business logic here
         switch (event.type) {
             case 'invoice.payment_succeeded':
-                console.log('💰 Payment succeeded!');
+                console.log(' Payment succeeded!');
                 break;
             case 'customer.subscription.created':
-                console.log('🎉 New subscription!');
+                console.log(' New subscription!');
                 break;
         }
         
         res.status(200).json({ success: true });
     } catch (error) {
-        console.error('❌ Webhook failed:', error.message);
+        console.error(' Webhook failed:', error.message);
         res.status(400).json({ error: 'Webhook processing failed' });
     }
 });
 
 app.listen(3000, () => {
-    console.log('🚀 Webhook server running on port 3000');
+    console.log(' Webhook server running on port 3000');
 });
 ```
 
 ---
 
-## 🏗️ Supported Webhook Providers
+##  Supported Webhook Providers
 
 | Provider | Status | Signature Verification | Advanced Features |
 |----------|--------|----------------------|-------------------|
-| **Stripe** | ✅ Production Ready | HMAC SHA-256 | ✅ |
-| **GitHub** | ✅ Production Ready | HMAC SHA-256 | ✅ |
-| **Discord** | ✅ Production Ready | Ed25519 | ✅ |
-| **Shopify** | ✅ Production Ready | HMAC SHA-256 | ✅ |
-| **PayPal** | ✅ Production Ready | Certificate Validation | ✅ |
-| **Twilio** | ✅ Production Ready | HMAC SHA-1 | ✅ |
-| **SendGrid** | ✅ Production Ready | ECDSA | ✅ |
+| **Stripe** |  Production Ready | HMAC SHA-256 | |
+| **GitHub** |  Production Ready | HMAC SHA-256 |  |
+| **Discord** |  Production Ready | Ed25519 |  |
+| **Shopify** |  Production Ready | HMAC SHA-256 |  |
+| **PayPal** |  Production Ready | Certificate Validation |  |
+| **Twilio** |  Production Ready | HMAC SHA-1 |  |
+| **SendGrid** |  Production Ready | ECDSA |  |
 
 ### Provider-Specific Examples
 
@@ -593,7 +593,7 @@ export const webhookConfig = {
 
 ---
 
-## 🧪 Examples
+##  Examples
 
 The package includes comprehensive examples demonstrating all features:
 
@@ -627,7 +627,7 @@ npm run example:ecommerce
 
 ---
 
-## 🚀 Production Deployment
+##  Production Deployment
 
 ### Docker Deployment
 
@@ -779,7 +779,7 @@ app.get('/health', (req, res) => {
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ### Unit Testing
 
@@ -828,7 +828,7 @@ describe('Webhook Endpoints', () => {
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
@@ -903,7 +903,7 @@ Create structured logger instance.
 
 ---
 
-## 📚 Resources
+##  Resources
 
 - **[Examples](./examples/)** - Complete working examples
 - **[API Documentation](./docs/api.md)** - Detailed API reference
@@ -914,7 +914,7 @@ Create structured logger instance.
 
 ---
 
-## 📊 Performance
+##  Performance
 
 Hook-Engine is designed for high performance and scalability:
 
@@ -925,7 +925,7 @@ Hook-Engine is designed for high performance and scalability:
 
 ---
 
-## 🛡️ Security
+##  Security
 
 Security is a top priority:
 
@@ -938,7 +938,7 @@ Security is a top priority:
 
 ---
 
-## 📈 Roadmap
+##  Roadmap
 
 - [ ] **GraphQL Subscriptions** - Real-time webhook delivery
 - [ ] **Message Queues** - Redis/RabbitMQ integration
@@ -949,28 +949,20 @@ Security is a top priority:
 
 ---
 
-## 📄 License
+##  License
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🌟 Support
+##  Support
 
 - **GitHub Issues** - Bug reports and feature requests
-- **Documentation** - Comprehensive guides and examples
-- **Community** - Join our Discord community
-- **Enterprise Support** - Commercial support available
 
 ---
-
-**⭐ Star this repository if Hook-Engine helps you build better webhook infrastructure!**
-
-**🔗 Share it with your team if it saves you development time!**
-
+** Star this repository if Hook-Engine helps you build better webhook infrastructure!**
 ---
 
-*Built with ❤️ by developers, for developers.*
 
 
 
